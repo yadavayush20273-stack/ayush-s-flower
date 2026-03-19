@@ -3,194 +3,294 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Boss ❤️</title>
+<title>For Tamanna 💖</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+body {
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align:center;
+  color:white;
+  overflow-x:hidden;
+  background: linear-gradient(to bottom, #0f0f1a, #000);
 }
 
-body{
-min-height:100vh;
-background:#0f0c29;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-overflow:hidden;
-position:relative;
+/* 🌌 Stars */
+.stars {
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+.star {
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:white;
+  animation: twinkle 2s infinite alternate;
+}
+@keyframes twinkle {
+  from {opacity:0.2;}
+  to {opacity:1;}
 }
 
-/* Cinematic background glow */
-body::before{
-content:"";
-position:absolute;
-width:200%;
-height:200%;
-background:radial-gradient(circle at 30% 40%, #ff416c55, transparent 40%),
-radial-gradient(circle at 70% 60%, #7b2ff755, transparent 40%),
-radial-gradient(circle at 50% 80%, #00c6ff44, transparent 40%);
-animation:bgMove 15s infinite alternate linear;
-z-index:0;
+/* 💕 Hearts */
+.heart {
+  position:fixed;
+  bottom:-10px;
+  font-size:20px;
+  animation: floatUp 6s linear infinite;
+}
+@keyframes floatUp {
+  from {transform:translateY(0); opacity:1;}
+  to {transform:translateY(-100vh); opacity:0;}
 }
 
-@keyframes bgMove{
-0%{transform:translate(-10%,-10%);}
-100%{transform:translate(-30%,-30%);}
+.container {
+  padding:20px;
+  margin-top:12vh;
 }
 
-.container{
-position:relative;
-z-index:2;
+.glow {
+  font-size: clamp(28px, 6vw, 60px);
+  font-weight:bold;
+  text-shadow:0 0 10px #fff,0 0 25px #ff4da6,0 0 50px #ff4da6;
 }
 
-button{
-padding:10px 22px;
-font-size:16px;
-border:none;
-border-radius:30px;
-margin:10px;
-cursor:pointer;
-transition:0.3s;
+button {
+  padding:12px 25px;
+  font-size: clamp(14px, 3.5vw, 20px);
+  border:none;
+  border-radius:30px;
+  background:#ff4da6;
+  color:white;
+  margin-top:20px;
+  cursor:pointer;
+  transition:0.3s;
+}
+button:hover {
+  transform:scale(1.1);
 }
 
-#yes{
-background:white;
-color:#ff416c;
+.hidden {display:none;}
+
+.textBox {
+  font-size: clamp(14px, 4vw, 22px);
+  margin-top:20px;
+  line-height:1.6;
 }
 
-#no{
-background:transparent;
-border:1px solid white;
-color:white;
-position:relative;
+/* 🎁 PERFECT GIFT BOX */
+.gift-box {
+  width: min(250px, 70vw);
+  height: min(250px, 70vw);
+  position:relative;
+  margin:40px auto;
+  animation: popIn 0.8s ease;
 }
 
-/* Gift Overlay */
-.giftOverlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.85);
-display:none;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-z-index:10;
+@keyframes popIn {
+  0% {transform: scale(0);}
+  70% {transform: scale(1.1);}
+  100% {transform: scale(1);}
 }
 
-/* Gift animation */
-.gift{
-font-size:110px;
-animation:shake 1s infinite;
+.gift-base {
+  width:100%;
+  height:100%;
+  background: linear-gradient(135deg,#ff4da6,#ff1a75);
+  border-radius:15px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.6);
+  position:absolute;
+  bottom:0;
 }
 
-@keyframes shake{
-0%{transform:rotate(0);}
-25%{transform:rotate(6deg);}
-50%{transform:rotate(-6deg);}
-75%{transform:rotate(6deg);}
-100%{transform:rotate(0);}
+.gift-base::before {
+  content:"";
+  position:absolute;
+  width:18%;
+  height:100%;
+  background:white;
+  left:50%;
+  transform:translateX(-50%);
+}
+.gift-base::after {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:18%;
+  background:white;
+  top:50%;
+  transform:translateY(-50%);
 }
 
-/* Sweet text */
-.revealText{
-font-size:26px;
-margin-top:20px;
-opacity:0;
-transform:scale(0.5);
-transition:1s;
-color:#ffccd5;
-text-shadow:0 0 15px #ff4d6d;
+.gift-lid {
+  width:100%;
+  height:30%;
+  background: linear-gradient(135deg,#ff1a75,#cc0052);
+  border-radius:15px 15px 0 0;
+  position:absolute;
+  top:-30%;
+  left:0;
+  transform-origin:bottom center;
+  animation: openLid 1.5s ease forwards;
 }
 
-.show{
-opacity:1;
-transform:scale(1.2);
+.gift-lid::before {
+  content:"";
+  position:absolute;
+  width:18%;
+  height:100%;
+  background:white;
+  left:50%;
+  transform:translateX(-50%);
+}
+.gift-lid::after {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:18%;
+  background:white;
+  top:50%;
+  transform:translateY(-50%);
 }
 
-/* Funny text */
-.funnyText{
-margin-top:20px;
-font-size:22px;
-color:#ffd166;
-opacity:0;
-transition:1s;
+@keyframes openLid {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(-110deg) translateY(-10px);}
 }
 
-.showFunny{
-opacity:1;
+/* Text animation */
+.fadeText {
+  animation: fadeIn 1.5s ease forwards;
 }
-
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
-<h1>Boss ❤️</h1>
-<p>Will you stay with me forever? 💍</p>
+<!-- Stars -->
+<div class="stars" id="stars"></div>
 
-<button id="yes">YES 💖</button>
-<button id="no">NO 😜</button>
+<script>
+for(let i=0;i<120;i++){
+  let star=document.createElement("div");
+  star.className="star";
+  star.style.top=Math.random()*100+"%";
+  star.style.left=Math.random()*100+"%";
+  star.style.animationDuration=(Math.random()*2+1)+"s";
+  document.getElementById("stars").appendChild(star);
+}
+</script>
+
+<!-- Hearts -->
+<script>
+setInterval(()=>{
+  let heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="💖";
+  heart.style.left=Math.random()*100+"%";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),6000);
+},600);
+</script>
+
+<!-- Welcome -->
+<div class="container" id="welcome">
+  <div class="glow">Welcome Tamanna 💖</div>
+  <button onclick="start()">Click Me ❤️</button>
 </div>
 
-<div class="giftOverlay" id="overlay">
-
-<div class="gift" id="gift">🎁</div>
-
-<div class="revealText" id="sweetMsg">
-You are so sweet Boss 💖
+<!-- Birthday -->
+<div class="container hidden" id="birthday">
+  <div id="message" class="textBox"></div>
+  <button id="giftBtn" class="hidden" onclick="openGift()">Open Gift 🎁</button>
 </div>
 
-<button id="thanksBtn" style="display:none;background:white;color:#ff416c;">
-Say Thanks 😌
-</button>
-
-<div class="funnyText" id="funnyMsg">
-Jada hawa me mat udo Boss 😏🔥
+<!-- Gift -->
+<div class="container hidden" id="gift">
+  <div class="gift-box">
+    <div class="gift-lid"></div>
+    <div class="gift-base"></div>
+  </div>
+  <div id="shayari" class="textBox glow"></div>
+  <button id="thanksBtn" class="hidden" onclick="sayThanks()">Say Thanks 💖</button>
 </div>
 
+<!-- Thanks -->
+<div class="container hidden" id="thanksScene">
+  <div id="finalText" class="textBox glow"></div>
+  <button id="partyBtn" class="hidden" onclick="giveParty()">Give Party 🎉</button>
+</div>
+
+<!-- End -->
+<div class="container hidden" id="end">
+  <div class="glow">Most welcome boss 😎✨<br>Ab aap ja sakte ho 😄🎉</div>
 </div>
 
 <script>
 
-// NO button move
-let noBtn=document.getElementById("no");
-noBtn.addEventListener("click",()=>{
-let x=Math.random()*150-75;
-let y=Math.random()*150-75;
-noBtn.style.transform=`translate(${x}px,${y}px)`;
-});
+const lines = [
+"Happy Birthday to an extraordinary friend! 🌸",
+"May your day be as radiant as your smile and as inspiring as your spirit.",
+"You are a rare blend of strength and kindness, and I feel lucky to celebrate you today.",
+"May this year unfold with endless opportunities, cherished moments, and dreams turning into reality.",
+"Keep shining, because the world is brighter with you in it!"
+];
 
-// YES click
-document.getElementById("yes").onclick=function(){
+let i=0;
 
-let overlay=document.getElementById("overlay");
-overlay.style.display="flex";
+function start(){
+  document.getElementById("welcome").classList.add("hidden");
+  document.getElementById("birthday").classList.remove("hidden");
+  typeMessage();
+}
 
-setTimeout(()=>{
-document.getElementById("gift").innerHTML="💝";
-document.getElementById("gift").style.animation="none";
+function typeMessage(){
+  if(i<lines.length){
+    document.getElementById("message").innerHTML += `<div class="fadeText">${lines[i]}</div><br>`;
+    i++;
+    setTimeout(typeMessage,1500);
+  } else {
+    document.getElementById("giftBtn").classList.remove("hidden");
+  }
+}
 
-document.getElementById("sweetMsg").classList.add("show");
+function openGift(){
+  document.getElementById("birthday").classList.add("hidden");
+  document.getElementById("gift").classList.remove("hidden");
 
-document.getElementById("thanksBtn").style.display="inline-block";
+  let text = `तेरी आँखों की गहराई में खो जाने का मन करता है,<br>
+तेरे लबों की खामोशी को सुन जाने का मन करता है।<br>
+तू पास हो तो हर ख्वाब हकीकत सा लगता है,<br>
+तेरे बिना तो जीते जी मर जाने का मन करता है।`;
 
-},2000);
+  setTimeout(()=>{
+    document.getElementById("shayari").innerHTML = text;
+    document.getElementById("thanksBtn").classList.remove("hidden");
+  },1800);
+}
 
-};
+function sayThanks(){
+  document.getElementById("gift").classList.add("hidden");
+  document.getElementById("thanksScene").classList.remove("hidden");
 
-// Thanks button
-document.getElementById("thanksBtn").onclick=function(){
-document.getElementById("funnyMsg").classList.add("showFunny");
-};
+  document.getElementById("finalText").innerHTML =
+  "Thanks se kaam nahi chalega... 😏<br>Party karni padegi 🎉😄";
+
+  document.getElementById("partyBtn").classList.remove("hidden");
+}
+
+function giveParty(){
+  document.getElementById("thanksScene").classList.add("hidden");
+  document.getElementById("end").classList.remove("hidden");
+}
 
 </script>
 
